@@ -85,50 +85,76 @@
   margin-bottom: 30px;
   text-align: center;
   justify-content: center;
+
+  &__label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: #757575;
+  }
+
+  &__checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--general-text-color);
+    border-radius: 2px;
+    margin-right: 7px;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .policy__checkbox:checked + & {
+      border-color: var(--accent-colour);
+      background-color: var(--accent-colour);
+      background-image: url(../images/icon-check.svg);
+      transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  &__contract {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+
+    color: #2196f3;
+    margin-left: 3px;
+  }
 }
 
-.policy__label {
+.modal-button {
   display: flex;
   align-items: center;
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-  color: #757575;
-}
-
-.policy__checkbox {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-.policy__checkbox:checked + .policy__icon {
-  border-color: var(--accent-colour);
+  justify-content: center;
+  margin: auto;
+  min-width: 200px;
+  min-height: 50px;
+  color: var(--hero-addres-button-text-color);
   background-color: var(--accent-colour);
-  background-image: url(../images/icon-check.svg);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  border: 1px transparent;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 4px;
 
-.policy__icon {
-  display: inline-block;
-  width: 16px;
-  height: 15px;
-  border: 2px solid var(--general-text-color);
-  border-radius: 2px;
-  margin-right: 7px;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.policy__contract {
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.03em;
-
-  color: #2196f3;
-  margin-left: 3px;
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
 }
